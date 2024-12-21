@@ -1,0 +1,6 @@
+<p>Ushbu kursni ochirishni xohlaysizmi: {{ course.name }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Ha</button>
+</form>
+<a href="{% url 'course_list' %}">Yo'q</a>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kurslar royxati</title>
+</head>
+<body>
+    <h1>Kurslar royxati</h1>
+    <ul>
+        {% for course in courses %}
+            <li>
+                <h2>{{ course.name }}</h2>
+                <p>{{ course.description }}</p>
+                {% if course.image %}
+                    <img src="{{ course.image.url }}" alt="{{ course.name }}" style="width:200px;">
+                {% endif %}
+                <a href="{% url 'update_course' course.pk %}">Togirlash</a> |
+                <a href="{% url 'delete_course' course.pk %}">Ochirish</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
